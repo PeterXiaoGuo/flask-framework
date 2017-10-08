@@ -1,8 +1,14 @@
 from flask import Flask, render_template, request, redirect
 from PlotStockPrice import get_dates, get_stock_data, plot_stocks
 from forms import TickerForm
+
 app = Flask(__name__)
 app.config.from_object('config')
+
+#from flask.ext.sqlalchemy import SQLAlchemy
+#app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/VickyQian'
+#db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -29,4 +35,5 @@ def index():
   return render_template('index.html', form = form,script=script, div=div, show_form = show_form)
 
 if __name__ == '__main__':
-  app.run(port=33509)
+  app.run(host='0.0.0.0', port=33509)
+  
