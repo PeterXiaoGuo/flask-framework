@@ -35,5 +35,5 @@ def index():
   return render_template('index.html', form = form,script=script, div=div, show_form = show_form)
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=33509)
+  app.run(host='0.0.0.0')
   
