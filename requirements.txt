@@ -1,6 +1,7 @@
 pandas
 bokeh
 dill
+gunicorn
 flask
 flask-wtf
 jinja2
